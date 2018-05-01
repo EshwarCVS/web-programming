@@ -1,0 +1,44 @@
+<html>
+<body>
+<form>
+<div>
+<h1><center>Feedback Form</center></h1>
+<hr>
+<div>
+<label><b>Name: </b></label>
+<input type="text" placeholder="enter name" name="name" required>
+</div>
+<div>
+<label><b>id: </b></label>
+<input type="text" placeholder="enter rollno" name="id" required>
+</div>
+<div>
+<label><b>email id: </b></label>
+<input type="text" placeholder="enter email id" name="email id" required>
+</div>
+<br>
+<label><b>feedback:</b></label>
+<label>satisfied
+<input type="radio" checked="checked" name="radio">
+<span class="checkmark"></span>
+</label>
+<label>not satisfied
+<input type="radio" name="radio">
+<span class="checkmark"></span>
+</label>
+<br>
+<label><b>rank:</b></label>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+<div>
+<button type="button">reset</button>
+<button type="submit">submit</button>
+</div>
+</div>
+</form>
+</body>
+</html>
