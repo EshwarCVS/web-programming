@@ -12,7 +12,7 @@
 
 - [x] Sorting by name
 - [ ] Greater than 90
-- [ ] Searching a name
+- [x] Searching a name
 
 ##### JDBC
 
