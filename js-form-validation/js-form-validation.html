@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            function validate() {
+                // Retrieving data
+                var firstName = document.getElementById("firstname").value;
+                var lastName = document.getElementById("lastname").value;
+                var email = document.getElementById("email").value;
+                var interests = document.getElementsByName("interests");
+                var department = document.getElementsByName("department");
+
+                // Control statements
+                if(firstName === '' || lastName === '') {
+                    alert('Input fields empty');
+                    return false;
+                }
+                if(firstName.length < 5 || lastName.length < 5) {
+                    alert('Input values too small');
+                    return false;
+                }
+
+                // Email validation
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                if(atpos < 1 || (dotpos - atpos < 3) || (email.length - dotpos < 3)) {
+                    alert('Email invalid');
+                    return false;
+                }
+
+                // Checkbox validation (atleast two should be checked)
+                var checkCount = 0;
+                for(var i = 0;i<interests.length;i++) {
+                    if(interests[i].checked) checkCount++;
+                }
+                if(checkCount < 2) {
+                    alert('Select at least two interests');
+                    return false;
+                }
+
+                // Radio checks (only one)
+                var radioChecks = 0;
+                for(var i=0;i<department.length;i++) {
+                    if(department[i].checked) radioChecks++;
+                }
+                if(radioChecks > 1) {
+                    alert('Do not select more than one department');
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <title>Learning to Validate forms</title>
+    <body>
+        <h1>Student Form</h1>
+        <form name="studForm" action="submit.html" method="post" onsubmit="return validate()">
+            <b>First Name</b> <input type="text" id="firstname" /><br><br>
+            <b>Last Name</b> <input type="text" id="lastname" /><br><br>
+            <b>Email Id</b> <input type="text" id="email" /><br><br>
+            <b>Interests(Select atleast two)</b><br><br>
+            <input type="checkbox" name="interests" value="coding">coding</input>
+            <input type="checkbox" name="interests" value="dancing">dancing</input>
+            <input type="checkbox" name="interests" value="swimming">swimming</input>
+            <input type="checkbox" name="interests" value="singing">singing</input><br><br>
+            <b>Department</b><br><br>
+            <input type="checkbox" name="department" value="CSE">CSE</input>
+            <input type="checkbox" name="department" value="ECE">ECE</input>
+            <input type="checkbox" name="department" value="EEE">EEE</input>
+            <input type="checkbox" name="department" value="CIVIL">CIVIL</input>
+            <input type="checkbox" name="department" value="IT">IT</input><br><br>
+            <input type="submit" value="Submit!" /><br><br>
+        </form>       
+
+    </body>
+</html>
