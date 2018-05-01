@@ -11,7 +11,7 @@
 ##### XML, XSL
 
 - [x] Sorting by name
-- [ ] Greater than 90
+- [x] Greater than 90
 - [x] Searching a name
 
 ##### JDBC
